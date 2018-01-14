@@ -49,4 +49,4 @@ app.post("/api/validatetoken", passport.authenticate("auth", { session : false }
 app.use("/api/employee", employeeRoutes(passport));
 app.use("/api/user", userRoutes);
 
-app.listen(8080);
+app.listen(process.env.PORT || 5000);
