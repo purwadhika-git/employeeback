@@ -38,6 +38,10 @@ passport.use("auth", new BearerStrategy((token, done) => {
 
 }));
 
+app.get("/", (req, res) => {
+    res.send("Hello");
+})
+
 app.post("/api/validatetoken", passport.authenticate("auth", { session : false }), (req, res) => {
     res.send(req.user);
 })
