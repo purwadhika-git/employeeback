@@ -22,7 +22,7 @@ module.exports = function(passport){
     
     });
     
-    router.get("/", passport.authenticate("auth", { session : false }), (req, res) => {
+    router.get("/", (req, res) => {
     
         Employee.find({}, (error, result) => {
             if(error){
